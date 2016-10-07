@@ -1,4 +1,4 @@
-function [ Jt,T50 ] = Jtranspose( q )
+function [ Jt,T50 ] = Jtranspose( q,dq )
 %D-H parameters
 a0=0;
 a1=10;
@@ -30,10 +30,7 @@ T54=TR(a4,alpha4,d5,theta5);
 T50=T10*T21*T32*T43*T54;
 P55=[0;0;0;1];
 P50=T50*P55;
-P50
-q
-J=jacobian(P50,q);
+J=jacobian(P50, dq);
 Jt=transpose(J);
 
 end
-
