@@ -50,16 +50,20 @@ final=[15;4;1;1];
 position=start;
 syms dq1 dq2 dq3 dq4;
 dq=[dq1;dq2;dq3;dq4];
+dq_ini=dq;
 q=q+dq;
 while pdist([transpose(position); transpose(final)])>1
     dx=final-position;
-    [Jt,T50]=Jtranspose(q);
+    [Jt,T50]=Jtranspose(q,dq_ini);
     dq=Jt*dx;
     q=q+dq;
     position=T50*start;
+%     position=T5_0(q+dq)*start;
     
+%     dq=dq+dq1;
+%     position=T50*start;
+%     
 %     dq(2)=Jt*dx(2);dq(3)=Jt*dx(3);dq(4)=Jt*dx(4);
-   
+%    
 %     start=T50*start;
 end
-
