@@ -4,6 +4,6 @@ N=step;
 L=start;
 change=(final-start)/step;
 for i=1:step
-    L=[L change*i];
+    L=[L start+change*i];
 end
 
