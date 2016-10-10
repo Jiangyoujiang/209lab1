@@ -51,4 +51,10 @@ xs=end_effector_sets(1,:);
 ys=end_effector_sets(2,:);
 zs=end_effector_sets(3,:);
 scatter3(xs,ys,zs);
+hold on;
+%plot desired path
+xD=D(1,:);
+yD=D(2,:);
+zD=D(3,:);
+plot3(xD,yD,zD);
 sol_set
